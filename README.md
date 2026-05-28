@@ -7,7 +7,7 @@ This starter kit gives you cookie-based Sanctum auth, a Vue router app, account 
 
 | You need | This repo gives you |
 | --- | --- |
-| A Laravel + Vue SPA without Inertia | **Vue Router**, **Pinia**, **Vite**, and Laravel API routes |
+| A Laravel + Vue SPA | **Vue Router**, **Pinia**, **Vite**, and Laravel API routes |
 | Session-safe authentication | **Sanctum cookie auth**, CSRF support, login, register, logout |
 | Account workflows | Profile updates, password changes, password reset, email change verification |
 | A small admin surface | Separate Blade admin login and protected admin pages |
