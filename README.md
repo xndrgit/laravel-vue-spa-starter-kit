@@ -1,55 +1,52 @@
 # Laravel Vue SPA Starter Kit
 
-A clean Laravel 12 + Vue 3 starter kit for building session-authenticated SPAs with a small Blade admin area.
+**Ship a real Laravel 12 + Vue 3 SPA faster.**  
+This starter kit gives you cookie-based Sanctum auth, a Vue router app, account settings, password reset, email change verification, a protected Blade admin area, tests, and bundled Codex skills for agent-assisted development.
 
-## Features
+## Why This Repo
 
-- Laravel 12 backend
-- Vue 3 SPA frontend
-- Vue Router routes and auth guards
-- Pinia auth/session store
-- Sanctum cookie-based SPA authentication
-- Login, registration, logout, and remember-me support
-- Password reset flow
-- Profile settings
-- Email change with password confirmation and verification
-- Password change with current-password confirmation
-- Admin login and protected Blade admin pages
-- Tailwind CSS 4, Vite, and FontAwesome icons
-- Feature tests for auth, account, and admin flows
+| You need | This repo gives you |
+| --- | --- |
+| A Laravel + Vue SPA without Inertia | **Vue Router**, **Pinia**, **Vite**, and Laravel API routes |
+| Session-safe authentication | **Sanctum cookie auth**, CSRF support, login, register, logout |
+| Account workflows | Profile updates, password changes, password reset, email change verification |
+| A small admin surface | Separate Blade admin login and protected admin pages |
+| Agent-ready project workflows | Codex skills in `.agents/skills` for design, planning, copy, review, and implementation support |
 
-## Tech Stack
+## Stack
 
-- PHP `^8.2`
-- Laravel `^12.0`
-- Laravel Sanctum `^4.3`
-- Vue `^3.5`
-- Vue Router `^5.0`
-- Pinia `^3.0`
-- Tailwind CSS `^4.0`
-- Vite `^6.0`
-- PHPUnit `^11.5`
-- MySQL or MariaDB
+| Layer | Tools |
+| --- | --- |
+| Backend | **PHP 8.2+**, **Laravel 12**, **Laravel Sanctum** |
+| Frontend | **Vue 3**, **Vue Router 5**, **Pinia 3**, **Tailwind CSS 4**, **FontAwesome** |
+| Build | **Vite 6**, npm |
+| Quality | **PHPUnit 11**, **Laravel Pint** |
+| Database | MySQL or MariaDB |
 
-## Install
+## Included
 
-Clone the repository:
+| Area | Included pieces |
+| --- | --- |
+| SPA pages | Home, about, login, register, forgot password, reset password, dashboard, settings, profile, security, 404 |
+| API auth | Register, login, current user, logout |
+| Account API | Profile update, email update, password update |
+| Admin | Login, dashboard, users, settings, system, logout |
+| Security defaults | Throttled auth routes, signed email-change verification, no published credentials |
+| Tests | Feature tests for auth and admin setup |
+
+## Quick Start
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/laravel-vue-spa-starter-kit.git
+git clone https://github.com/xndrgit/laravel-vue-spa-starter-kit.git
 cd laravel-vue-spa-starter-kit
-```
 
-Install dependencies:
-
-```bash
 composer install
 npm install
 cp .env.example .env
 php artisan key:generate
 ```
 
-Create a MySQL/MariaDB database, then update `.env`:
+Create a database, then update `.env`:
 
 ```env
 DB_CONNECTION=mysql
@@ -60,20 +57,13 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-Run migrations:
+Run and open:
 
 ```bash
 php artisan migrate
-```
-
-Start the app:
-
-```bash
 php artisan serve --host=localhost --port=8000
 npm run dev
 ```
-
-Open:
 
 ```text
 http://localhost:8000
@@ -81,9 +71,7 @@ http://localhost:8000
 
 ## Optional Local Admin
 
-No admin credentials are hard-coded or published.
-
-To create a local admin user, set these values in your own `.env`:
+No admin credentials are hard-coded. To seed a local admin, add these values to your own `.env`:
 
 ```env
 STARTER_ADMIN_NAME="Local Admin"
@@ -97,89 +85,90 @@ Then run:
 php artisan migrate --seed
 ```
 
-The seeder only creates this admin in the `local` environment and only when email and password are set.
-
 Admin login:
 
 ```text
 http://localhost:8000/admin/login
 ```
 
-## Routes
-
-Vue SPA:
-
-- `/`
-- `/about`
-- `/login`
-- `/register`
-- `/forgot-password`
-- `/reset-password/{token}`
-- `/dashboard`
-- `/settings`
-- `/settings/profile`
-- `/settings/security`
-
-Blade admin:
-
-- `/admin/login`
-- `/admin/dashboard`
-- `/admin/users`
-- `/admin/settings`
-- `/admin/system`
-- `/admin/logout`
-
-Laravel:
-
-- `/api/*`
-- `/sanctum/csrf-cookie`
-- `/email-change/verify/{user}/{token}`
-
 ## Project Structure
 
-```text
-app/                    Laravel app code
-database/               Migrations, factories, seeders
-resources/js/           Vue SPA
-resources/js/pages/     Vue pages
-resources/js/router/    Vue Router config and guards
-resources/js/stores/    Pinia stores
-resources/views/app.blade.php
-resources/views/admin/  Blade admin area
-routes/api.php          API routes
-routes/web.php          SPA, admin, verification routes
-tests/Feature/          Feature tests
-```
+| Path | Purpose |
+| --- | --- |
+| `app/Http/Controllers/Api` | SPA auth, password reset, and account endpoints |
+| `app/Http/Controllers/Admin` | Blade admin authentication and pages |
+| `app/Http/Middleware/AdminMiddleware.php` | Admin route protection |
+| `app/Notifications/VerifyPendingEmail.php` | Pending email verification notification |
+| `database/migrations` | Users, cache, jobs, and pending-email schema |
+| `database/seeders` | Optional local admin seeding |
+| `resources/js` | Vue SPA entry, pages, components, router, and store |
+| `resources/views/admin` | Protected Blade admin UI |
+| `routes/api.php` | JSON API routes |
+| `routes/web.php` | SPA fallback, admin routes, email verification route |
+| `tests/Feature` | Feature coverage for auth and admin setup |
+| `.agents/skills` | Codex skills bundled with the project |
 
-## Commands
+## Vue Components
 
-```bash
-npm run dev
-npm run build
-php artisan test
-vendor/bin/pint
-```
+| Component | Role |
+| --- | --- |
+| `AppHeader.vue` | Main SPA navigation and session actions |
+| `AuthShell.vue` | Shared layout for auth pages |
+| `PasswordChecklist.vue` | Password requirement feedback |
+| `SettingsLayout.vue` | Settings section navigation and layout |
+| `stores/auth.js` | Pinia session state and auth actions |
+| `router/index.js` | Vue routes and auth guards |
 
-## Security Notes
+## Bundled Codex Skills
 
-- Do not commit `.env`.
-- Do not publish real admin credentials.
-- Configure a real mailer before using password reset or email verification in production.
-- Review `SANCTUM_STATEFUL_DOMAINS` and `CORS_ALLOWED_ORIGINS` for your domain.
-- Use HTTPS in production.
-- Keep `APP_DEBUG=false` in production.
+The repo includes reusable Codex skills in `.agents/skills` so future work can follow repeatable workflows.
 
-## Production Checklist
+| Skill | Use it for |
+| --- | --- |
+| `brainstorming` | Shape ideas into clear specs before implementation |
+| `writing-plans` | Turn approved requirements into task-by-task implementation plans |
+| `frontend-design` | Build polished frontend pages and components |
+| `impeccable` | Improve UI craft, hierarchy, accessibility, motion, and UX copy |
+| `web-design-guidelines` | Review UI against web interface best practices |
+| `copywriting` | Write concise product, README, and marketing copy |
+| `find-skills` | Discover installable skills for specialized work |
+| `grill-me` | Stress-test plans with structured questioning |
+| `ui-ux-pro-max` | Plan, build, and review UI/UX across web and mobile patterns |
+| `sleek-design-mobile-apps` | Design mobile app screens and flows |
+| `caveman` | Switch to ultra-compact technical communication |
+| `caveman-compress` | Compress memory and instruction files while preserving meaning |
+| `using-superpowers` | Skill-discovery guardrail for agent workflows |
 
-- Set `APP_ENV=production`
-- Set `APP_DEBUG=false`
-- Set a production database
-- Configure mail
-- Configure Sanctum/CORS domains
-- Run `php artisan test`
-- Run `npm run build`
-- Deploy over HTTPS
+## Useful Commands
+
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start Vite |
+| `npm run build` | Build frontend assets |
+| `php artisan test` | Run feature tests |
+| `vendor/bin/pint` | Format PHP code |
+
+## Production Notes
+
+- Keep `.env` private.
+- Use `APP_ENV=production` and `APP_DEBUG=false`.
+- Configure a production database and mailer.
+- Review `SANCTUM_STATEFUL_DOMAINS` and `CORS_ALLOWED_ORIGINS`.
+- Serve over HTTPS.
+- Run `php artisan test` and `npm run build` before deploy.
+
+## Contributing
+
+Pull requests are welcome.
+
+For a clean contribution:
+
+1. Fork the repo.
+2. Create a focused branch.
+3. Keep changes small and documented.
+4. Run the relevant tests and formatter.
+5. Open a PR with the problem, solution, and verification steps.
 
 ## License
 
-MIT
+Released under the **MIT License**.
