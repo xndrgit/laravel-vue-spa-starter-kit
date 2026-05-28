@@ -1,0 +1,115 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source "../**/*.blade.php";
+@source "../**/*.js";
+@source "../**/*.vue";
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+@layer base {
+    html {
+        color-scheme: light;
+    }
+
+    body {
+        @apply bg-zinc-50 text-zinc-950 antialiased;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+        font: inherit;
+    }
+}
+
+@layer components {
+    .page-shell {
+        @apply mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 lg:py-14;
+    }
+
+    .section-card {
+        @apply border border-zinc-200 bg-white p-6;
+    }
+
+    .eyebrow {
+        @apply text-xs font-bold uppercase tracking-[0.16em] text-zinc-500;
+    }
+
+    .form-label {
+        @apply mb-2 block text-sm font-semibold text-zinc-800;
+    }
+
+    .form-input {
+        @apply block min-h-11 w-full border border-zinc-300 bg-white px-3 py-2.5 text-zinc-950 outline-none transition placeholder:text-zinc-400 focus:border-zinc-950 focus:ring-2 focus:ring-zinc-950/15 disabled:cursor-not-allowed disabled:bg-zinc-100 disabled:text-zinc-500;
+    }
+
+    .form-error {
+        @apply mt-2 block text-sm font-medium text-red-700;
+    }
+
+    .form-button {
+        @apply inline-flex min-h-11 w-full items-center justify-center gap-2 bg-zinc-950 px-4 py-3 text-sm font-semibold text-white transition hover:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-zinc-950/20 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60;
+    }
+
+    .button-primary {
+        @apply inline-flex min-h-11 items-center justify-center gap-2 bg-zinc-950 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-zinc-950/20 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60;
+    }
+
+    .button-secondary {
+        @apply inline-flex min-h-11 items-center justify-center gap-2 border border-zinc-300 bg-white px-4 py-2.5 text-sm font-semibold text-zinc-900 transition hover:bg-zinc-50 focus:outline-none focus:ring-2 focus:ring-zinc-950/10 focus:ring-offset-2;
+    }
+
+    .status-success {
+        @apply border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-medium text-emerald-800;
+    }
+
+    .status-warning {
+        @apply border border-amber-200 bg-amber-50 px-4 py-3 text-sm font-medium text-amber-900;
+    }
+
+    .status-info {
+        @apply border border-blue-200 bg-blue-50 px-4 py-3 text-sm font-medium text-blue-900;
+    }
+
+    .status-danger {
+        @apply border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-800;
+    }
+
+    .nav-link {
+        @apply block min-h-10 px-3 py-2 text-sm font-medium text-zinc-700 transition hover:bg-zinc-100 hover:text-zinc-950 focus:outline-none focus:ring-2 focus:ring-zinc-950/10;
+    }
+
+    .nav-link.router-link-active {
+        @apply bg-zinc-100 text-zinc-950;
+    }
+
+    .nav-action {
+        @apply mt-2 inline-flex min-h-10 items-center justify-center gap-2 bg-zinc-950 px-3 py-2 text-sm font-semibold text-white transition hover:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-zinc-950/20 focus:ring-offset-2 md:mt-0;
+    }
+
+    .account-menu-link {
+        @apply flex min-h-10 items-center gap-3 px-3 py-2 text-sm font-medium text-zinc-700 transition hover:bg-zinc-100 hover:text-zinc-950 focus:outline-none focus:ring-2 focus:ring-zinc-950/10;
+    }
+
+    .settings-link {
+        @apply flex min-h-10 items-center gap-3 px-3 py-2 text-sm font-semibold text-zinc-700 transition hover:bg-zinc-100 hover:text-zinc-950 focus:outline-none focus:ring-2 focus:ring-zinc-950/10;
+    }
+
+    .settings-link.router-link-active {
+        @apply bg-zinc-950 text-white hover:bg-zinc-950 hover:text-white;
+    }
+
+    .admin-nav-link {
+        @apply flex min-h-10 shrink-0 items-center gap-2 px-3 py-2 text-sm font-semibold text-zinc-300 transition hover:bg-zinc-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-white/20;
+    }
+
+    .admin-nav-link-active {
+        @apply bg-zinc-100 text-zinc-950 hover:bg-zinc-100 hover:text-zinc-950;
+    }
+}
