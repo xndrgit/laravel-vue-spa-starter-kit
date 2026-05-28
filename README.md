@@ -1,6 +1,6 @@
-# Laravel Vue SPA Starter Kit
+# Laravel Vue SPA Starter Kit + Agents Ready!
 
-**Ship a real Laravel 12 + Vue 3 SPA faster.**  
+**Ready to use Laravel 12 + Vue 3 SPA.**  
 This starter kit gives you cookie-based Sanctum auth, a Vue router app, account settings, password reset, email change verification, a protected Blade admin area, tests, and bundled Codex skills for agent-assisted development.
 
 ## Why This Repo
