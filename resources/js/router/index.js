@@ -2,7 +2,6 @@ import { createRouter, createWebHistory } from 'vue-router';
 import { useAuthStore } from '../stores/auth';
 
 import HomePage from '../pages/HomePage.vue';
-import AboutPage from '../pages/AboutPage.vue';
 import LoginPage from '../pages/LoginPage.vue';
 import RegisterPage from '../pages/RegisterPage.vue';
 import ForgotPasswordPage from '../pages/ForgotPasswordPage.vue';
@@ -15,7 +14,6 @@ import NotFoundPage from '../pages/NotFoundPage.vue';
 
 const routes = [
     { path: '/', name: 'home', component: HomePage },
-    { path: '/about', name: 'about', component: AboutPage },
     { path: '/login', name: 'login', component: LoginPage, meta: { guest: true } },
     { path: '/register', name: 'register', component: RegisterPage, meta: { guest: true } },
     { path: '/forgot-password', name: 'forgot-password', component: ForgotPasswordPage, meta: { guest: true } },

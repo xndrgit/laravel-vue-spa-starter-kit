@@ -18,7 +18,6 @@ class AuthSetupTest extends TestCase
     public function test_spa_pages_and_fallback_are_served(): void
     {
         $this->get('/')->assertOk();
-        $this->get('/about')->assertOk();
         $this->get('/dashboard')->assertOk();
         $this->get('/settings')->assertOk();
         $this->get('/settings/profile')->assertOk();
