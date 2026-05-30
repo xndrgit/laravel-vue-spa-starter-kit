@@ -12,7 +12,7 @@
                 <div class="flex items-center justify-between px-5 py-5 lg:block">
                     <a href="{{ route('admin.dashboard') }}" class="flex items-center gap-3">
                         <span class="grid size-10 place-items-center bg-zinc-100 text-xs font-bold text-zinc-950">
-                            LV
+                            AP
                         </span>
                         <span>
                             <span class="block text-sm font-bold">Admin</span>

@@ -45,9 +45,9 @@ onBeforeUnmount(() => {
         <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
             <RouterLink to="/" class="flex items-center gap-3 font-semibold tracking-tight">
                 <span class="grid size-10 place-items-center bg-zinc-950 text-xs font-bold text-white">
-                    LV
+                    AP
                 </span>
-                <span class="text-lg">Laravel Vue SPA</span>
+                <span class="text-lg">App</span>
             </RouterLink>
 
             <button
@@ -67,7 +67,6 @@ onBeforeUnmount(() => {
                 ]"
             >
                 <RouterLink class="nav-link" to="/" @click="open = false">Home</RouterLink>
-                <RouterLink class="nav-link" to="/about" @click="open = false">Docs</RouterLink>
 
                 <template v-if="auth.isAuthenticated">
                     <RouterLink class="nav-link" to="/dashboard" @click="open = false">Account</RouterLink>

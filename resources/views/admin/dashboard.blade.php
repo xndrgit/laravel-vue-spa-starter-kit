@@ -30,7 +30,7 @@
     <section class="section-card mt-6">
         <h2 class="text-xl font-bold tracking-tight text-zinc-950">Blade admin foundation</h2>
         <p class="mt-2 max-w-2xl text-zinc-600">
-            The included admin shell gives your project protected extension points for users, settings, and system tools.
+            Add real admin modules here when the product needs operational tools.
         </p>
     </section>
 @endsection

@@ -22,7 +22,7 @@
             <section class="section-card mx-auto w-full max-w-md sm:p-8">
                 <div class="mb-8">
                     <div class="mb-4 grid size-11 place-items-center bg-zinc-950 text-xs font-bold text-white">
-                        LV
+                        AP
                     </div>
                     <h1 class="text-2xl font-bold tracking-tight text-zinc-950">Admin login</h1>
                     <p class="mt-2 text-sm text-zinc-600">Admins use the same users table with admin access enabled.</p>

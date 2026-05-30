@@ -32,7 +32,7 @@ const submit = async () => {
 <template>
     <AuthShell
         title="Recover access safely."
-        description="The starter kit includes Laravel's password broker flow, ready to connect to your production mailer."
+        description="Use the password reset flow after a production mailer is configured."
     >
         <h1 class="text-2xl font-bold tracking-tight text-zinc-950">Forgot password</h1>
         <p class="mt-2 text-sm text-zinc-600">Enter your email and we will send a reset link.</p>
