@@ -3,16 +3,16 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Admin Login - {{ config('app.name', 'Laravel Vue SPA') }}</title>
+        <title>Admin Login - {{ config('app.name', 'App') }}</title>
         @vite(['resources/css/app.css'])
     </head>
     <body class="min-h-screen bg-zinc-50">
         <main class="mx-auto grid min-h-screen max-w-6xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
             <aside class="hidden lg:block">
                 <p class="eyebrow">Admin access</p>
-                <h1 class="mt-4 max-w-xl text-4xl font-bold tracking-tight text-zinc-950">A protected admin area included from the start.</h1>
+                <h1 class="mt-4 max-w-xl text-4xl font-bold tracking-tight text-zinc-950">Protected admin access.</h1>
                 <p class="mt-5 max-w-lg text-base leading-8 text-zinc-600">
-                    The starter kit ships with Blade admin routes, session login, and an explicit admin authorization check.
+                    Sign in with an administrator account to access the protected admin area.
                 </p>
                 <a class="button-secondary mt-8" href="/">
                     View website

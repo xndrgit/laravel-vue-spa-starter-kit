@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>@yield('title', 'Admin') - {{ config('app.name', 'Laravel Vue SPA') }}</title>
+        <title>@yield('title', 'Admin') - {{ config('app.name', 'App') }}</title>
         @vite(['resources/css/app.css'])
     </head>
     <body class="min-h-screen bg-zinc-50">
@@ -16,7 +16,7 @@
                         </span>
                         <span>
                             <span class="block text-sm font-bold">Admin</span>
-                            <span class="block text-xs text-zinc-400">{{ config('app.name', 'Laravel Vue SPA') }}</span>
+                            <span class="block text-xs text-zinc-400">{{ config('app.name', 'App') }}</span>
                         </span>
                     </a>
                 </div>
@@ -25,18 +25,6 @@
                     <a class="admin-nav-link {{ request()->routeIs('admin.dashboard') ? 'admin-nav-link-active' : '' }}" href="{{ route('admin.dashboard') }}">
                         <span aria-hidden="true">•</span>
                         Dashboard
-                    </a>
-                    <a class="admin-nav-link {{ request()->routeIs('admin.users') ? 'admin-nav-link-active' : '' }}" href="{{ route('admin.users') }}">
-                        <span aria-hidden="true">•</span>
-                        Users
-                    </a>
-                    <a class="admin-nav-link {{ request()->routeIs('admin.settings') ? 'admin-nav-link-active' : '' }}" href="{{ route('admin.settings') }}">
-                        <span aria-hidden="true">•</span>
-                        Settings
-                    </a>
-                    <a class="admin-nav-link {{ request()->routeIs('admin.system') ? 'admin-nav-link-active' : '' }}" href="{{ route('admin.system') }}">
-                        <span aria-hidden="true">•</span>
-                        System
                     </a>
                 </nav>
 

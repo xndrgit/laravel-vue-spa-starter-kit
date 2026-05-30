@@ -40,9 +40,6 @@ class AdminSetupTest extends TestCase
         ])->assertRedirect('/admin/dashboard');
 
         $this->get('/admin/dashboard')->assertOk();
-        $this->get('/admin/users')->assertOk();
-        $this->get('/admin/settings')->assertOk();
-        $this->get('/admin/system')->assertOk();
 
         $this->post('/admin/logout')
             ->assertRedirect('/admin/login');
@@ -67,12 +64,12 @@ class AdminSetupTest extends TestCase
         $this->assertGuest();
     }
 
-    public function test_admin_pages_require_admin_access(): void
+    public function test_removed_placeholder_admin_pages_are_not_available(): void
     {
-        $user = User::factory()->create(['is_admin' => false]);
+        $admin = User::factory()->create(['is_admin' => true]);
 
         foreach (['/admin/users', '/admin/settings', '/admin/system'] as $path) {
-            $this->actingAs($user)->get($path)->assertForbidden();
+            $this->actingAs($admin)->get($path)->assertNotFound();
         }
     }
 }

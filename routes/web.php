@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\PageController as AdminPageController;
 use App\Http\Controllers\EmailChangeVerificationController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,9 +13,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     Route::middleware(['auth', 'admin'])->group(function () {
         Route::get('/dashboard', DashboardController::class)->name('dashboard');
-        Route::get('/users', [AdminPageController::class, 'users'])->name('users');
-        Route::get('/settings', [AdminPageController::class, 'settings'])->name('settings');
-        Route::get('/system', [AdminPageController::class, 'system'])->name('system');
         Route::post('/logout', [AdminAuthController::class, 'destroy'])->name('logout');
     });
 });
