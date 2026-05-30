@@ -1,9 +1,9 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "app/laravel-vue-spa-starter-kit",
+    "name": "app/clean-laravel-vue-app",
     "type": "project",
-    "description": "A Laravel 12 and Vue 3 SPA starter kit with Sanctum authentication and a Blade admin area.",
-    "keywords": ["laravel", "vue", "spa", "sanctum", "starter-kit"],
+    "description": "A clean Laravel 12 and Vue 3 application foundation with Sanctum authentication.",
+    "keywords": ["laravel", "vue", "spa", "sanctum"],
     "license": "MIT",
     "require": {
         "php": "^8.2",
